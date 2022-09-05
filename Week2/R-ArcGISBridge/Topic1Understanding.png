@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="origin">
+    <title>Sign In</title>
+    <script src="/sharing/files/scripts/detector.min.js?v=1A68A60"></script>
+    <link rel="stylesheet" href="/sharing/files/css/site.min.css?v=1A68A60">
+    <script src="/sharing/files/scripts/theme.min.js?v=1A68A60"></script>
+    <script>
+        var oAuthInfo = {"oauth_state":"au4sb57qWTgjF-6RvmU5BqQ..aUtUwWPsgRaJnPITbKPP3X8E_UyDJ4XBPJjxN4rHnXXtqQ6y-coBnIi_NnNaFj3IUCLBFAh5FReJ42bqbesBXLvDjJovJ-TmVJ3j6LvNXl6hl2oaa1KMC0jtGCZUfnQeSHA_h6z7PNQv8GCIcAI5oseHmiUcNlV2uS9sS95AbVRI3eiDw-lc9WmB6Kbj5yvf_RkRB2mEaMyYAVOIflsrkxxJyXOcqjqKHjzXG6paWIhZkMDSPLBmPta7Dfo0p3RiSnLSMqlNZjUctY-osjzyUO6ouh9OtGpF_xWe8oPUOT3b1Uz_gwWaYttg-tPpL7YjdQnYhul0OY_xDPsc3Qs6IcWTiyKqSzu58MFouYQwGojKQ8CkVBk8nyRfW_xP90kZLxBhoaEUfFK1buqMX1yxRCf_Rjvyp5rSGvdkYI6kQC5HySTHmoTt04Ri3az4vffXxWR9HPW-zyPjAjmDzoC94FrLNqIabwI2KvSvJGLNvjbrkpzVSAGXuAwtKLQygiMzJ9rE6xAHM9nPj5aZfgbetqtetm0xPv4cpmsa","client_id":"esriapps","appTitle":"esri.com","locale":"en","persistOption":true,"hideCancel":true,"showSocialLogins":true,"contextPath":"/sharing","appOrgInfo":{"id":"P3ePLMYs2RVChkJx","name":"Esri","description":"Esri publishes a set of ready-to-use maps and apps that are available as part of ArcGIS.  ArcGIS is a mapping platform that enables you to create interactive maps and apps to share within your organization or publicly.","thumbnail":"thumbnail.jpg"},"orgUrlBase":"maps.arcgis.com","helpBase":"https://doc.arcgis.com/en/arcgis-online/","socialProviders":["github","facebook","google","apple"],"showSignupOption":true,"signupType":"publicaccount","originSignin":false}
+        window.setTheme(oAuthInfo, "/sharing");
+    </script>
+    <script src="/sharing/files/scripts/oauth2.js?v=1A68A60"></script>
+</head>
+<body>
+    <div class="content-container"></div>
+</body>
+<script>
+    oAuthInfo.locale = ((oAuthInfo.locale && oAuthInfo.locale === "iw") ? "he" : oAuthInfo.locale);
+    require.config({
+        baseUrl: "/sharing/files/scripts/",
+        locale: oAuthInfo.locale && oAuthInfo.locale.toLowerCase() || ""
+    });
+    require(["signIn", "domReady!"], function (signIn) {
+        signIn.startup(oAuthInfo);
+    });
+</script>
+</html>

@@ -1,0 +1,6 @@
+library(arcgisbinding)
+arc.check_product()
+dataset <- arc.open(path = "Y:\\GitHubTB\\GEOClass\\SUNY-Buffalo-GEO511-SDS\\Week2\\R-ArcGISBridge\\crashes_per_mile.shp")
+filtered.df <- arc.select(dataset, fields=c('RouteNm','C_MI'), where_clause="RouteNm= 'I-15' AND FC_NAME = 'Urban Interstate'")
+crash.mean <- mean(filtered.df$C_MI)
+print(crash.mean)
